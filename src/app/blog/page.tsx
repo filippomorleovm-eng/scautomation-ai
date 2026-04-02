@@ -2,7 +2,8 @@ import { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FadeInUp } from "@/components/ui/FadeInUp";
-import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, CalendarDays } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Blog — SC Automation AI",
@@ -16,6 +17,17 @@ export const metadata: Metadata = {
     locale: "it_IT",
   },
 };
+
+const articles = [
+  {
+    slug: "5-task-business-automatizzare-2026",
+    title:
+      "Quanto tempo perdi ogni giorno? 5 task che ogni business dovrebbe automatizzare nel 2026",
+    date: "2026-04-03",
+    excerpt:
+      "È l'una e mezza. Dovresti essere a pranzo. Invece sei al telefono con un cliente che vuole spostare l'appuntamento di domani. Mentre parli, ti arriva una notifica: tre email non lette, tutte con la stessa domanda.",
+  },
+];
 
 export default function BlogPage() {
   return (
@@ -46,41 +58,39 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Coming soon */}
+      {/* Articles list */}
       <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <FadeInUp>
-            <div className="max-w-2xl mx-auto text-center bg-bg-light border border-gray-100 rounded-2xl p-10 md:p-14">
-              <div className="w-16 h-16 bg-brand/10 text-brand rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M12 20h9" />
-                  <path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z" />
-                </svg>
-              </div>
-              <h2 className="text-2xl md:text-3xl font-heading font-bold text-secondary mb-4">
-                I primi articoli sono in arrivo
-              </h2>
-              <p className="text-lg text-text-muted mb-8 leading-relaxed">
-                Nel frattempo, prenota il tuo audit gratuito per scoprire come
-                possiamo aiutare il tuo business.
-              </p>
-              <a
-                href="/#contatti"
-                className="inline-flex items-center gap-2 bg-brand hover:bg-teal-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-brand/25 hover:-translate-y-1"
-              >
-                Prenota il tuo Audit AI Gratuito <ArrowRight size={20} />
-              </a>
-            </div>
-          </FadeInUp>
+        <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+          <div className="space-y-8">
+            {articles.map((article, idx) => {
+              const formattedDate = new Date(article.date).toLocaleDateString(
+                "it-IT",
+                { year: "numeric", month: "long", day: "numeric" }
+              );
+              return (
+                <FadeInUp key={article.slug} delay={idx * 0.1}>
+                  <Link
+                    href={`/blog/${article.slug}`}
+                    className="block bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-brand/30 transition-all duration-300 group"
+                  >
+                    <div className="flex items-center gap-1.5 text-sm text-text-muted mb-3">
+                      <CalendarDays size={15} />
+                      <time dateTime={article.date}>{formattedDate}</time>
+                    </div>
+                    <h2 className="text-xl md:text-2xl font-heading font-bold text-secondary mb-3 group-hover:text-brand transition-colors">
+                      {article.title}
+                    </h2>
+                    <p className="text-text-muted leading-relaxed mb-4">
+                      {article.excerpt}
+                    </p>
+                    <span className="inline-flex items-center gap-1.5 text-brand font-semibold text-sm group-hover:gap-2.5 transition-all">
+                      Leggi l&apos;articolo <ArrowRight size={16} />
+                    </span>
+                  </Link>
+                </FadeInUp>
+              );
+            })}
+          </div>
         </div>
       </section>
 
