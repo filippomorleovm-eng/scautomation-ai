@@ -29,7 +29,7 @@ const founders = [
     name: "Filippo",
     role: "Co-Fondatore",
     photo: "/Carra_profilo.jpg",
-    bio: "Sono un ingegnere di Cagliari, da sempre affascinato alle nuove scoperte/tecnologie. Dopo vari viaggi per studi e lavori, ho visto come il mondo sta andando avanti velocemente e voglio far sì che nè io nè i miei collaboratori rimangano indietro. In un mondo sempre più veloce, voglio che SC Automation aiuti a tenere il passo ed i nostri Agenti sono il primo strumento che naviga verso quella rotta.",
+    bio: "Sono un ingegnere di Cagliari, da sempre affascinato dalle nuove scoperte/tecnologie. Dopo vari viaggi per studi e lavori, ho visto come il mondo sta andando avanti velocemente e voglio far sì che nè io nè i miei collaboratori rimangano indietro. In un mondo sempre più veloce, voglio che SC Automation aiuti a tenere il passo ed i nostri Agenti sono il primo strumento che naviga verso quella rotta.",
   },
 ];
 
