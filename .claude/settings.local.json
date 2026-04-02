@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx next:*)",
+      "Bash(npm install:*)",
+      "Bash(npx next-sitemap:*)",
+      "Bash(ls \"C:\\\\Users\\\\filip\\\\Desktop\\\\scautomation-ai\\\\public\\\\sitemap\"*.xml \"C:\\\\Users\\\\filip\\\\Desktop\\\\scautomation-ai\\\\public\\\\robots.txt\")",
+      "Bash(npm run:*)"
+    ]
+  }
+}

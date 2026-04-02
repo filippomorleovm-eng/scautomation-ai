@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://scautomation-ai.it
+
+# Sitemaps
+Sitemap: https://scautomation-ai.it/sitemap.xml
