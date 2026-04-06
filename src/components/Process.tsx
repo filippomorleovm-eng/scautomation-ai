@@ -35,27 +35,32 @@ export function Process() {
   ];
 
   return (
-    <section id="processo" className="py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="processo" className="relative py-24 overflow-hidden" style={{ background: "linear-gradient(to bottom, #1E3A5F, #152D4A)" }}>
+      {/* Subtle radial glow for depth */}
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 40%, rgba(13,148,136,0.08), transparent)" }} />
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16">
-          
+
           {/* Left Column - Steps */}
           <div className="flex-1 w-full max-w-xl">
             <FadeInUp>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-12">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-12">
                 Come lavoriamo
               </h2>
             </FadeInUp>
-            
-            <div className="space-y-8">
+
+            <div className="space-y-6">
               {steps.map((step, idx) => (
-                <FadeInUp key={idx} delay={idx * 0.1} className="relative flex items-center md:justify-start gap-6">
-                  <div className="flex items-center justify-center w-14 h-14 rounded-full bg-brand/10 border-2 border-brand text-brand font-bold text-xl shrink-0 shadow-sm">
-                    {step.num}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-heading font-bold text-secondary mb-2">{step.title}</h3>
-                    <p className="text-text-muted">{step.desc}</p>
+                <FadeInUp key={idx} delay={idx * 0.1}>
+                  <div className="relative flex items-center md:justify-start gap-6 rounded-xl px-5 py-4 bg-white/5 border border-white/10 transition-colors duration-300 hover:bg-white/10">
+                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-brand/15 border-2 border-brand text-brand font-bold text-xl shrink-0">
+                      {step.num}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-heading font-bold text-white mb-1">{step.title}</h3>
+                      <p className="text-slate-300">{step.desc}</p>
+                    </div>
                   </div>
                 </FadeInUp>
               ))}
@@ -65,9 +70,9 @@ export function Process() {
           {/* Right Column - Terminal Simulation */}
           <div className="flex-1 w-full max-w-xl" ref={ref}>
             <FadeInUp delay={0.3}>
-              <div className="bg-[#0F172A] rounded-2xl shadow-2xl p-6 font-mono text-sm overflow-hidden border border-gray-800">
+              <div className="bg-[#0B1120] rounded-2xl p-6 font-mono text-sm overflow-hidden border border-white/12 shadow-[0_0_40px_rgba(13,148,136,0.1),0_25px_50px_rgba(0,0,0,0.3)]">
                 {/* MacOS Dots */}
-                <div className="flex gap-2 mb-6 border-b border-gray-800 pb-4">
+                <div className="flex gap-2 mb-6 border-b border-white/10 pb-4">
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
@@ -78,22 +83,22 @@ export function Process() {
                     <p className="text-green-400 font-bold mb-4">// SIMULAZIONE LIVE <span className="animate-pulse">_</span></p>
                   )}
                   {linesVisible >= 2 && (
-                    <p className="text-gray-300"><span className="text-blue-400">→</span> Chiamata in arrivo: +39 070 *** ***</p>
+                    <p className="text-gray-300"><span className="text-blue-400">&rarr;</span> Chiamata in arrivo: +39 070 *** ***</p>
                   )}
                   {linesVisible >= 3 && (
-                    <p className="text-gray-300"><span className="text-brand">✓</span> Paziente identificato: Marco R.</p>
+                    <p className="text-gray-300"><span className="text-brand">&check;</span> Paziente identificato: Marco R.</p>
                   )}
                   {linesVisible >= 4 && (
-                    <p className="text-gray-300"><span className="text-brand">✓</span> Richiesta: Spostare visita di giovedì</p>
+                    <p className="text-gray-300"><span className="text-brand">&check;</span> Richiesta: Spostare visita di giovedì</p>
                   )}
                   {linesVisible >= 5 && (
-                    <p className="text-gray-300"><span className="text-brand">✓</span> Slot disponibile trovato: Venerdì 15:30</p>
+                    <p className="text-gray-300"><span className="text-brand">&check;</span> Slot disponibile trovato: Venerdì 15:30</p>
                   )}
                   {linesVisible >= 6 && (
-                    <p className="text-gray-300"><span className="text-brand">✓</span> Appuntamento aggiornato ed SMS conferma inviato</p>
+                    <p className="text-gray-300"><span className="text-brand">&check;</span> Appuntamento aggiornato ed SMS conferma inviato</p>
                   )}
                   {linesVisible >= 7 && (
-                    <div className="mt-6 pt-4 border-t border-gray-800 text-gray-400 flex items-center justify-between text-xs">
+                    <div className="mt-6 pt-4 border-t border-white/10 text-gray-400 flex items-center justify-between text-xs">
                       <span>Durata: 47 secondi</span>
                       <span className="text-green-400">Costo: €0.03</span>
                     </div>
@@ -102,7 +107,7 @@ export function Process() {
               </div>
             </FadeInUp>
           </div>
-          
+
         </div>
       </div>
     </section>
