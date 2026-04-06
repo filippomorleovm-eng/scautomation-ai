@@ -19,12 +19,12 @@ export default function Home() {
       <Hero />
       <Problem />
       <BeforeAfter />
+      <ScenariosCarousel />
       <AgentsGrid />
-      <Catalog />
       <Sectors />
       <Process />
       <Results />
-      <ScenariosCarousel />
+      <Catalog />
       <Faq />
       <ContactCta />
       <Footer />
