@@ -6,12 +6,12 @@ import { ArrowRight } from "lucide-react";
 import { FadeInUp } from "./ui/FadeInUp";
 
 const highlightedAgents = [
-  { id: 1, name: "Segreteria Telefonica AI", icon: Phone, desc: "Risponde alle chiamate 24/7 in italiano naturale. Prenota, sposta e cancella appuntamenti. Trasferisce le chiamate urgenti.", tags: ["Medico", "Beauty", "Ristoranti"] },
-  { id: 2, name: "Assistente WhatsApp", icon: MessageSquare, desc: "Chatbot intelligente su WhatsApp. Gestisce prenotazioni, invia promemoria automatici, risponde a domande su orari e servizi.", tags: ["Medico", "Retail"] },
-  { id: 4, name: "Agente Anti No-Show", icon: BellRing, desc: "Invia promemoria multicanale (SMS, WhatsApp, email) e gestisce conferme e cancellazioni automatiche.", tags: ["Medico", "Beauty", "Ristoranti"] },
-  { id: 5, name: "Risponditore Email", icon: Mail, desc: "Classifica le email in arrivo per priorità e risponde automaticamente alle richieste ripetitive.", tags: ["Tutti"] },
-  { id: 6, name: "Agente Gestione Recensioni", icon: Star, desc: "Monitora Google e TripAdvisor, risponde alle recensioni e segnala quelle negative per intervento rapido.", tags: ["Ristoranti", "Hotel", "Beauty"] },
-  { id: 7, name: "Follow-up Automatico", icon: RefreshCcw, desc: "Invia sequenze post-visita personalizzate e recall ai clienti inattivi per aumentare la retention.", tags: ["Tutti"] },
+  { id: 1, name: "Segreteria Telefonica AI", icon: Phone, desc: "Risponde alle chiamate 24/7 e gestisce gli appuntamenti.", pill: "24/7 attivo", tags: ["Medico", "Beauty", "Ristoranti"] },
+  { id: 2, name: "Assistente WhatsApp", icon: MessageSquare, desc: "Prenotazioni e risposte istantanee su WhatsApp.", pill: "Risposta in <5 sec", tags: ["Medico", "Retail"] },
+  { id: 4, name: "Agente Anti No-Show", icon: BellRing, desc: "Promemoria automatici che eliminano gli appuntamenti mancati.", pill: "-40% no-show", tags: ["Medico", "Beauty", "Ristoranti"] },
+  { id: 5, name: "Risponditore Email", icon: Mail, desc: "Classifica e risponde alle email ripetitive in autonomia.", pill: "-80% email manuali", tags: ["Tutti"] },
+  { id: 6, name: "Agente Gestione Recensioni", icon: Star, desc: "Monitora e risponde alle recensioni su Google e TripAdvisor.", pill: "Risposta in <1 ora", tags: ["Ristoranti", "Hotel", "Beauty"] },
+  { id: 7, name: "Follow-up Automatico", icon: RefreshCcw, desc: "Ricontatta i clienti inattivi e aumenta la retention.", pill: "+30% retention", tags: ["Tutti"] },
 ];
 
 export function Catalog() {
@@ -50,9 +50,12 @@ export function Catalog() {
                       </div>
                     </div>
                   </div>
-                  <p className="text-text-muted text-sm mt-auto">
+                  <p className="text-text-muted text-sm">
                     {agent.desc}
                   </p>
+                  <span className="inline-block mt-2 px-2.5 py-1 rounded-full bg-brand/10 text-brand text-xs font-medium">
+                    {agent.pill}
+                  </span>
                 </div>
               </FadeInUp>
              );
