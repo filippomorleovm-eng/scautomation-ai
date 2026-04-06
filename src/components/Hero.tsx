@@ -78,14 +78,29 @@ export function Hero() {
                 <p className="text-sm font-medium text-gray-400 uppercase tracking-widest mb-3">Settori serviti con successo</p>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2 text-text-muted font-medium">
                   <span>Studi Medici</span>
-                  <span className="text-gray-300">•</span>
+                  <span className="text-gray-300">&bull;</span>
                   <span>Dentisti</span>
-                  <span className="text-gray-300">•</span>
+                  <span className="text-gray-300">&bull;</span>
                   <span>Commercialisti</span>
-                  <span className="text-gray-300">•</span>
+                  <span className="text-gray-300">&bull;</span>
                   <span>Hotel</span>
-                  <span className="text-gray-300">•</span>
+                  <span className="text-gray-300">&bull;</span>
                   <span>Ristoranti</span>
+                </div>
+                <div className="flex flex-wrap justify-center lg:justify-start gap-3 mt-4">
+                  {[
+                    { emoji: "\u{1F1EE}\u{1F1F9}", label: "100% Italiano" },
+                    { emoji: "\u26A1", label: "Operativo in 48-72h" },
+                    { emoji: "\u{1F512}", label: "GDPR Compliant" },
+                  ].map(({ emoji, label }) => (
+                    <span
+                      key={label}
+                      className="inline-flex items-center gap-1.5 bg-white border border-gray-200 rounded-full px-3 py-1 text-xs font-medium text-secondary"
+                    >
+                      <span>{emoji}</span>
+                      {label}
+                    </span>
+                  ))}
                 </div>
               </div>
             </FadeInUp>

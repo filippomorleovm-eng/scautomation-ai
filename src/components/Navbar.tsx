@@ -23,6 +23,7 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Agenti AI", href: isHome ? "#agenti" : "/#agenti" },
+    { name: "Catalogo", href: "/agenti" },
     { name: "Come Funziona", href: isHome ? "#processo" : "/#processo" },
     { name: "Risultati", href: isHome ? "#risultati" : "/#risultati" },
     { name: "FAQ", href: isHome ? "#faq" : "/#faq" },
