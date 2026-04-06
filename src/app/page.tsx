@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Problem } from "@/components/Problem";
+import { BeforeAfter } from "@/components/BeforeAfter";
 import { AgentsGrid } from "@/components/AgentsGrid";
 import { Catalog } from "@/components/Catalog";
 import { Sectors } from "@/components/Sectors";
@@ -17,6 +18,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Problem />
+      <BeforeAfter />
       <AgentsGrid />
       <Catalog />
       <Sectors />
