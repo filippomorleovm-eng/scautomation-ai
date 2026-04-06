@@ -25,7 +25,7 @@ export function Faq() {
     },
     {
       q: "E se non sono soddisfatto?",
-      a: "Nessun vincolo a lungo termine. Puoi disdire quando vuoi con soli 30 giorni di preavviso.",
+      a: "Nessun vincolo a lungo termine. Puoi disdire quando vuoi.",
     },
     {
       q: "Funziona solo per gli studi medici?",
