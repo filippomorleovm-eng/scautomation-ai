@@ -7,6 +7,7 @@ import { Catalog } from "@/components/Catalog";
 import { Sectors } from "@/components/Sectors";
 import { Process } from "@/components/Process";
 import { Results } from "@/components/Results";
+import { WhyUs } from "@/components/WhyUs";
 import { ScenariosCarousel } from "@/components/ScenariosCarousel";
 import { Faq } from "@/components/Faq";
 import { ContactCta } from "@/components/ContactCta";
@@ -24,6 +25,7 @@ export default function Home() {
       <Sectors />
       <Process />
       <Results />
+      <WhyUs />
       <Catalog />
       <Faq />
       <ContactCta />
