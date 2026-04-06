@@ -13,7 +13,7 @@ export function Hero() {
       <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] rounded-full bg-secondary/5 blur-[80px] pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-16 max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:gap-12 xl:gap-16 max-w-7xl mx-auto">
 
           {/* Left column — text */}
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left lg:w-[55%] shrink-0">
@@ -108,7 +108,7 @@ export function Hero() {
           </div>
 
           {/* Right column — live feed */}
-          <FadeInUp delay={0.3} className="mt-12 lg:mt-0 lg:w-[45%]">
+          <FadeInUp delay={0.3} className="mt-12 lg:mt-14 lg:w-[45%]">
             <HeroLiveFeed />
           </FadeInUp>
 
