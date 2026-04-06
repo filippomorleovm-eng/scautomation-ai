@@ -2,6 +2,7 @@
 
 import { TypeAnimation } from "react-type-animation";
 import { FadeInUp } from "./ui/FadeInUp";
+import { HeroLiveFeed } from "./ui/HeroLiveFeed";
 import { ArrowRight } from "lucide-react";
 
 export function Hero() {
@@ -12,7 +13,10 @@ export function Hero() {
       <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] rounded-full bg-secondary/5 blur-[80px] pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-16 max-w-7xl mx-auto">
+
+          {/* Left column — text */}
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left lg:w-[55%] shrink-0">
 
             <FadeInUp>
               <div className="inline-flex items-center gap-2 bg-bg-light border border-brand/20 px-4 py-2 rounded-full mb-8">
@@ -72,7 +76,7 @@ export function Hero() {
             <FadeInUp delay={0.5}>
               <div className="border-t border-gray-100 pt-6">
                 <p className="text-sm font-medium text-gray-400 uppercase tracking-widest mb-3">Settori serviti con successo</p>
-                <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-text-muted font-medium">
+                <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2 text-text-muted font-medium">
                   <span>Studi Medici</span>
                   <span className="text-gray-300">•</span>
                   <span>Dentisti</span>
@@ -85,6 +89,13 @@ export function Hero() {
                 </div>
               </div>
             </FadeInUp>
+
+          </div>
+
+          {/* Right column — live feed */}
+          <FadeInUp delay={0.3} className="mt-12 lg:mt-0 lg:w-[45%]">
+            <HeroLiveFeed />
+          </FadeInUp>
 
         </div>
       </div>
