@@ -60,7 +60,7 @@ export function Sectors() {
           </h2>
         </FadeInUp>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-6 max-w-[920px] mx-auto">
           {sectors.map((sector, idx) => (
             <FadeInUp key={sector.id} delay={idx * 0.1}>
               <Link 
