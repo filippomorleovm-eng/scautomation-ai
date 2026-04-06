@@ -9,28 +9,36 @@ const scenarios = [
     icon: Stethoscope,
     label: "Studio Medico",
     color: "bg-blue-100 text-blue-700",
-    text: "Ore 22:15. Un paziente chiama per spostare la visita di domani mattina. L'agente risponde, trova il primo slot libero giovedì alle 15:30, conferma e invia un SMS di promemoria. Tutto in 47 secondi.",
+    bigNumber: "47s",
+    subtitle: "per gestire una chiamata alle 22:15",
+    text: "L'agente risponde, trova lo slot libero, conferma e invia SMS. Il medico dorme.",
     stat: "Costo dell'interazione: €0.10",
   },
   {
     icon: Scissors,
     label: "Centro Estetico",
     color: "bg-pink-100 text-pink-700",
-    text: "Lunedì mattina. 8 clienti hanno un appuntamento questa settimana ma nessuno ha confermato. L'agente invia un promemoria WhatsApp personalizzato a ciascuno. 7 su 8 confermano entro un'ora. Il posto dell'ottava viene riassegnato dalla lista d'attesa.",
+    bigNumber: "87%",
+    subtitle: "no-show evitati con promemoria automatici",
+    text: "Promemoria WhatsApp personalizzati. 7 su 8 confermano in un'ora. Il posto vuoto va alla lista d'attesa.",
     stat: "No-show evitati: 87%",
   },
   {
     icon: Building2,
     label: "Amministratore Condominio",
     color: "bg-amber-100 text-amber-700",
-    text: "Sabato sera. Un condomino segnala una perdita d'acqua nel garage. L'agente riceve il messaggio WhatsApp, classifica la segnalazione come urgente, avvisa il tecnico reperibile e aggiorna il condomino sullo stato dell'intervento. L'amministratore lo scopre lunedì — già risolto.",
+    bigNumber: "0 min",
+    subtitle: "di attesa per il condomino — risposta istantanea",
+    text: "Segnalazione ricevuta, classificata, tecnico avvisato. L'amministratore lo scopre lunedì — già risolto.",
     stat: "Tempo di risposta: istantaneo",
   },
   {
     icon: UtensilsCrossed,
     label: "Ristorante",
     color: "bg-orange-100 text-orange-700",
-    text: "Venerdì sera, pieno servizio. Il telefono squilla ma nessuno può rispondere. L'agente gestisce 12 chiamate contemporaneamente: 8 prenotazioni confermate, 3 informazioni sugli orari, 1 richiesta allergeni con risposta dettagliata dal menu.",
+    bigNumber: "0",
+    subtitle: "chiamate perse durante il servizio",
+    text: "12 chiamate gestite contemporaneamente: prenotazioni, orari, allergeni. Tutto in automatico.",
     stat: "Chiamate perse: zero",
   },
 ];
@@ -108,9 +116,9 @@ export function ScenariosCarousel() {
               const Icon = s.icon;
               return (
                 <FadeInUp key={idx} delay={idx * 0.1}>
-                  <div className="w-[300px] md:w-[320px] shrink-0 snap-start bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow flex flex-col h-full">
-                    {/* Sector icon + label */}
-                    <div className="flex items-center gap-2.5 mb-4">
+                  <div className="w-[300px] md:w-[320px] min-h-[380px] shrink-0 snap-start bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow flex flex-col">
+                    {/* 1. Sector icon + label */}
+                    <div className="flex items-center gap-2.5 mb-5">
                       <div className={`w-9 h-9 rounded-lg flex items-center justify-center ${s.color}`}>
                         <Icon size={18} />
                       </div>
@@ -119,13 +127,23 @@ export function ScenariosCarousel() {
                       </span>
                     </div>
 
-                    {/* Scenario text */}
-                    <p className="text-text-muted leading-relaxed text-[15px] flex-1 mb-5">
+                    {/* 2. Big impact number */}
+                    <p className="text-7xl md:text-[80px] font-extrabold text-brand leading-none text-center mb-2">
+                      {s.bigNumber}
+                    </p>
+
+                    {/* 3. Number subtitle */}
+                    <p className="text-sm text-text-muted text-center mb-5">
+                      {s.subtitle}
+                    </p>
+
+                    {/* 4. Short description */}
+                    <p className="text-text-main text-sm leading-relaxed flex-1 mb-5">
                       {s.text}
                     </p>
 
-                    {/* Result stat */}
-                    <div className="pt-4 border-t border-gray-100">
+                    {/* 5. Result stat */}
+                    <div className="pt-4 border-t border-gray-100 mt-auto">
                       <p className="text-brand font-bold text-sm">{s.stat}</p>
                     </div>
                   </div>
