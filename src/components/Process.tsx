@@ -83,19 +83,19 @@ export function Process() {
                     <p className="text-green-400 font-bold mb-4">// SIMULAZIONE LIVE <span className="animate-pulse">_</span></p>
                   )}
                   {linesVisible >= 2 && (
-                    <p className="text-gray-300"><span className="text-blue-400">&rarr;</span> Chiamata in arrivo: +39 070 *** ***</p>
+                    <p className="text-gray-300"><span className="text-blue-400">→</span> Chiamata in arrivo: +39 070 *** ***</p>
                   )}
                   {linesVisible >= 3 && (
-                    <p className="text-gray-300"><span className="text-brand">&check;</span> Paziente identificato: Marco R.</p>
+                    <p className="text-gray-300"><span className="text-brand">✓</span> Paziente identificato: Marco R.</p>
                   )}
                   {linesVisible >= 4 && (
-                    <p className="text-gray-300"><span className="text-brand">&check;</span> Richiesta: Spostare visita di giovedì</p>
+                    <p className="text-gray-300"><span className="text-brand">✓</span> Richiesta: Spostare visita di giovedì</p>
                   )}
                   {linesVisible >= 5 && (
-                    <p className="text-gray-300"><span className="text-brand">&check;</span> Slot disponibile trovato: Venerdì 15:30</p>
+                    <p className="text-gray-300"><span className="text-brand">✓</span> Slot disponibile trovato: Venerdì 15:30</p>
                   )}
                   {linesVisible >= 6 && (
-                    <p className="text-gray-300"><span className="text-brand">&check;</span> Appuntamento aggiornato ed SMS conferma inviato</p>
+                    <p className="text-gray-300"><span className="text-brand">✓</span> Appuntamento aggiornato ed SMS conferma inviato</p>
                   )}
                   {linesVisible >= 7 && (
                     <div className="mt-6 pt-4 border-t border-white/10 text-gray-400 flex items-center justify-between text-xs">
