@@ -23,7 +23,7 @@ const founders = [
     name: "Mattia",
     role: "Co-Fondatore",
     photo: "/Sbraba_profilo.png",
-    bio: "Imprenditore di Cagliari, sempre stato dell'idea che la tecnologia deve lavorare per te, non il contrario. Il mio obiettivo è semplice: recuperare il tempo che le attività monotone mi rubano ogni giorno. Con gli Agenti AI che abbiamo sviluppato ci sto riuscendo ed ora voglio far sì che queste potenzialità vengano conosciute anche da voi.",
+    bio: "Libero professionista di Cagliari, sempre stato dell'idea che la tecnologia deve lavorare per te, non il contrario. Il mio obiettivo è semplice: recuperare il tempo che le attività monotone mi rubano ogni giorno. Con gli Agenti AI che abbiamo sviluppato ci sto riuscendo ed ora voglio far sì che queste potenzialità vengano conosciute anche da voi.",
   },
   {
     name: "Filippo",
