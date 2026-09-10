@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SC Automation AI
+
+Marketing site for SC Automation — AI automation agency
+building agent systems and process automation for SMEs.
+
+Built with Next.js (App Router) and TypeScript, deployed on Vercel.
 
 ## Getting Started
 
